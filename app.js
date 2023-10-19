@@ -22,10 +22,10 @@ const cartRoutes = require('./routes/cart');
 const productApi = require('./routes/api/productapi');
 
 
+//const dbURL = process.env.dbURL;
 
 
-
-mongoose.connect('mongodb://127.0.0.1:27017/shopping')
+mongoose.connect('mongodb+srv://labanijash00:IrpbpYsF5CDzraom@cluster0.22ohpxu.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp') //mongodb://127.0.0.1:27017/shopping
 .then(()=>{
     console.log("DB connected successfully")
 })
@@ -74,7 +74,7 @@ app.use((req , res , next)=>{
 passport.use(new LocalStrategy(User.authenticate()));
 
 //seeding database
-// seedDB()
+ //seedDB()
 
 app.get('/' , (req,res)=>{
     res.render('home');
